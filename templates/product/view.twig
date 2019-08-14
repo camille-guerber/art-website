@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-sm-12 offset-lg-1 offset-md-1 offset-sm-0">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <div class="row spotlight-group" data-infinite="true" data-theme="dark">
+                        <div class="col-4">
+                            <a class="spotlight" href="{{ asset('/img/products/'~product.image.name) }}" data-title="{{ product.titre }}">
+                                <img class="img-preview" src="{{ asset('/img/products/'~product.image.name) }}" alt="{{ product.titre }}">
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="spotlight" href="{{ asset('/img/products/'~product.image2.name) }}" data-title="{{ product.titre }}">
+                                <img class="img-preview" src="{{ asset('/img/products/'~product.image2.name) }}" alt="{{ product.titre }}">
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="spotlight" href="{{ asset('/img/products/'~product.image3.name) }}" data-title="{{ product.titre }}">
+                                <img class="img-preview" src="{{ asset('/img/products/'~product.image3.name) }}" alt="{{ product.titre }}">
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>{{ product.titre|lower }}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {% for hashtag in product.hashtags %}
+                                <h4 class="hashtag">{{ '#'~hashtag.nom|lower }}</h4>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <hr>
+                            <span class="product-description">{{ product.description|nl2br }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product/view') }}
+{% endblock %}

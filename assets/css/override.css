@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'futura-book';
+    src: url('../fonts/futura-book.ttf');
+}
+
+html {
+    text-transform: lowercase;
+}
+
+body {
+    font-family: futura-book;
+    background-color: #fff;
+}
+
+textarea {
+    height: 10rem;
+    min-height: 10rem;
+    max-height: 30rem;
+}
+
+a:hover {
+    text-decoration: none;
+}

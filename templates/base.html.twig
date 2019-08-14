@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="{{ asset('img/site/favicon.png') }}" />
+    {% block title %}
+        {{ sonata_seo_title() }}
+    {% endblock %}
+    {{ sonata_seo_metadatas() }}
+    {{ sonata_seo_link_canonical() }}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="https://rawcdn.githack.com/nextapps-de/spotlight/0.6.2/dist/css/spotlight.css">
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<div class="container-fluid">
+    <!-- Menu -->
+    <div class="sidenav">
+        <p>gilles r. guerber</p>
+        <p>peintre - scultpeur - décorateur</p>
+        <a class="close-btn" id="close">&times; fermer</a>
+        <a href="{{ path('home') }}">accueil</a>
+        <a href="{{ path('home_about') }}">à propos</a>
+        <a href="{{ path('home_contact') }}">contact</a>
+        {% if app.user is not null %}
+        <a href="{{ path('admin_index') }}">administration</a>
+        <a href="{{ path('security_logout') }}">déconnexion</a>
+        {% endif %}
+        <hr>
+        <a href="#" target="_blank"><i class="fab fa-instagram fa-sm"></i> instagram</a>
+        <a href="#" target="_blank"><i class="fab fa-pinterest fa-sm"></i> pinterest</a>
+        <a href="#" target="_blank"><i class="fab fa-tumblr fa-sm"></i> tumblr</a>
+    </div>
+
+    <!-- Content -->
+    <div class="main">
+        <div class="row">
+            <div class="col-lg-2 col-md-12 col-sm-12 sidebar">
+                <div class="sticky-top">
+                    <div class="open-btn" id="open">
+                        <p>gilles r. guerber</p>
+                    </div>
+                    {% block sidebar %}
+
+                    {% endblock %}
+                    <hr>
+                    <div class="social">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tumblr"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-12 col-sm-12 content">
+                {% block message %}
+                    {% for message in app.flashes('notice') %}
+                        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                            <strong>message :</strong> {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endblock %}
+                {% block body %}
+                {% endblock %}
+                <footer>
+                    {% block footer %}
+                    {% endblock %}
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+{% block javascripts %}
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.6.2/dist/js/spotlight.min.js"></script>
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}
+</body>
+</html>

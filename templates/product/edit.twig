@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 offset-lg-2 offset-md-2">
+            <h1>éditer un produit</h1>
+            <hr>
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_errors(form) }}
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ form_row(form.titre) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ form_row(form.description) }}
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-4">
+                    <img src="{{ asset('/img/products/'~product.image.name) }}" class="w-100 h-100" alt="#" id="uploaded-img-1">
+                </div>
+                <div class="col-4">
+                    <img src="{{ asset('/img/products/'~product.image2.name) }}" class="w-100 h-100" alt="#" id="uploaded-img-1">
+                </div>
+                <div class="col-4">
+                    <img src="{{ asset('/img/products/'~product.image3.name) }}" class="w-100 h-100" alt="#" id="uploaded-img-1">
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product/create') }}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block sidebar %}
+    <hr>
+    <div class="filters-btn">
+        <button data-key="all" class="btn btn-outline-dark filter-btn">#all</button>
+        {% for hashtag in hashtags %}
+            <button data-key="{{ hashtag.nom }}" class="btn btn-outline-dark filter-btn">#{{ hashtag.nom|lower }}</button>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="card-columns">
+        {% for product in products %}
+            {% set hashtags = product.hashtags %}
+                <div class="card animated fadeIn" keys="{% for hashtag in hashtags %}{{ hashtag.nom~' ' }}{% endfor %}">
+                    <a class="product-link" href="{{ path('product_view', { 'id': product.id, 'slug': product.slug }) }}">
+                        <img src="{{ asset('/img/products/'~product.image.name) }}" alt="{{ product.titre }}">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-title text-center">{{ product.titre|lower }}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(products) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product/filter') }}
+{% endblock %}

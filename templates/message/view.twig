@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 offset-lg-2 offset-md-2">
+            <a href="{{ path('admin_message_list') }}"><button class="btn btn-primary"><i class="fas fa-chevron-left"></i> Retour aux messages</button></a>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <h5 class="font-weight-bold">Expéditeur</h5>
+                </div>
+                <div class="col-4">
+                    {{ message.nom ~' - '~ message.prenom }}
+                </div>
+                <div class="col-4">
+                    {{ message.mail }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h5 class="font-weight-bold">Sujet</h5>
+                </div>
+                <div class="col-4">
+                    {{ message.sujet }}
+                </div>
+                <div class="col-4">
+                    {{ message.sendedAt|date('d/m/Y') }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    {{ message.message|nl2br }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-light"><i class="fas fa-paper-plane"></i><a class="text-dark" href="mailto:{{ message.mail }}?subject={{ message.sujet }}&body=Bonjour {{ message.prenom ~' '~ message.nom }}"> Répondre</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product/view') }}
+{% endblock %}

@@ -1,0 +1,126 @@
+/* cards columns */
+
+@media (max-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+/* cards columns animations */
+.fadeIn {
+    animation: fadein 1.5s;
+    -moz-animation: fadein 1.5s; /* Firefox */
+    -webkit-animation: fadein 1.5s; /* Safari et Chrome */
+    -o-animation: fadein 1.5s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card-columns {
+    column-gap: 1rem;
+}
+
+.card {
+    border-radius: 0;
+    border: 0;
+    position: inherit;
+    margin-bottom: 1rem !important;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 2vh;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card img:hover {
+    opacity: 0.7;
+}
+
+.card-img-top {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.card-body {
+    background-color: #ededed;
+    padding: 0.5rem;
+}
+
+.filters-btn {
+    text-align: justify;
+}
+
+.filter-btn {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.25rem;
+}

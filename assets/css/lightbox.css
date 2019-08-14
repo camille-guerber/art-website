@@ -1,0 +1,38 @@
+#spotlight {
+}
+#spotlight .title{
+    background-color: #ffffffbf;
+    color: #000;
+    padding: 1rem;
+}
+#spotlight .description{
+    /* image description */
+}
+#spotlight .page{
+    /* current page */
+}
+#spotlight .fullscreen{
+    /* button fullscreen */
+}
+#spotlight .autofit{
+    /* button autofit */
+}
+#spotlight .zoom-out{
+    /* button zoom out */
+}
+#spotlight .zoom-in{
+    /* button zoom in */
+}
+#spotlight .theme{
+    /* button theme */
+}
+#spotlight .player{
+    /* button autoplay */
+}
+#spotlight .close{
+    /* button close */
+}
+#spotlight .arrow-left{
+}
+#spotlight .arrow-right{
+}

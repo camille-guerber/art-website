@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+
+        <div class="col-lg-10 col-md-10 col-sm-12 offset-lg-1 offset-md-1">
+            <h1>me contacter</h1>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-6">
+                    {{ form_errors(form) }}
+                    {{ form_label(form.nom) }}
+                    {{ form_widget(form.nom) }}
+                </div>
+                <div class="col-6">
+                    {{ form_label(form.prenom) }}
+                    {{ form_widget(form.prenom) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    {{ form_label(form.mail) }}
+                    {{ form_widget(form.mail) }}
+                </div>
+                <div class="col-6">
+                    {{ form_label(form.sujet) }}
+                    {{ form_widget(form.sujet) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ form_label(form.message) }}
+                    {{ form_widget(form.message) }}
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    {{ form_widget(form.envoyer) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

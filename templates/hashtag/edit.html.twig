@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 offset-lg-2 offset-md-2">
+            <h1>éditer un hashtag</h1>
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_errors(form) }}
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    {{ form_row(form.nom) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product/create') }}
+{% endblock %}

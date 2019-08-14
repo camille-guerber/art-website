@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 offset-lg-2 offset-md-2">
+            <h1>administration</h1>
+            <div class="card-columns">
+                <a href="{{ path('admin_product_create') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/add.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">ajouter un produit</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ path('admin_product_list') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/edit.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">gérer les produits</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ path('admin_hashtag_create') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/hashtag.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">ajouter un hashtag</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ path('admin_hashtag_list') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/edit.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">gérer les hashtags</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ path('admin_message_list') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/mail.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">consulter mes messages</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ path('admin_about_edit') }}" class="admin-card-a">
+                    <div class="card admin-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="{{ asset('img/site/about.png') }}" class="card-img-top" alt="...">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h5 class="card-title">éditer à propos</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
